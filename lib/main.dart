@@ -10,16 +10,16 @@ Future<void> main() async {
 
   await Supabase.initialize(
     // TODO: Replace credentials with your own
-    url: 'https://rzcevyndjjdmjanmzjkx.supabase.co',
-    anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ6Y2V2eW5kampkbWphbm16amt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzgzNDE3MDQsImV4cCI6MjA1MzkxNzcwNH0.chJU8gMa7jj1LD-fu8XE4utLqn2fCcYi26sPzKjZ3I4',
+     url: 'SUPABASE_URL',
+    anonKey: 'SUPABASE_ANON_KEY',
+   
   );
 
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

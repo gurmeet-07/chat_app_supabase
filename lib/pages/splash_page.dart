@@ -20,7 +20,7 @@ class SplashPageState extends State<SplashPage> {
 
   Future<void> getInitialSession() async {
     // quick and dirty way to wait for the widget to mount
-    await Future.delayed(Duration.zero);
+    await Future.delayed(const Duration(seconds: 2));
 
     try {
       final session = supabase.auth.currentSession;
@@ -43,7 +43,24 @@ class SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(child: CircularProgressIndicator()),
-    );
+        body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text(
+          'Chat App',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Icon(
+          Icons.chat,
+          size: 100,
+          color: Colors.blue,
+        ),
+      ],
+    )));
   }
 }
